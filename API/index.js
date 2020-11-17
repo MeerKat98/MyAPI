@@ -5,8 +5,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv/config');
 
+var corsOptions = {
+    origin: 'https://codepen.io'
+}
+
 app.use(bodyParser.json());
-app.use(cors()); 
+app.use(cors(corsOptions)); 
 
 //Import Routes
 const postRoute = require('./routes/posts');
@@ -27,4 +31,4 @@ mongoose.connect(
 });
 
 //Listen
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
