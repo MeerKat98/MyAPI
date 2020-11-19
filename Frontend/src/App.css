@@ -13,11 +13,32 @@
   }
 }
 
+.content-container {
+  padding: 50px;
+  height: 100vh;
+  background-color: lightgray;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  margin: 10px;
+  height: 30px;
+  width: 50px;
+  border: solid 2px #282c34;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  transition: 180ms;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100px;
+  min-height: 80px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
