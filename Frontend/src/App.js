@@ -5,12 +5,13 @@ import './App.css';
 class App extends React.Component {
   getReq() {
     console.log("Requesting data from API")
-    var request = new XMLHttpRequest();
-    request.open('GET','/post', true);
-    request.onload = function () {
-      var data = JSON.parse(this.response);
+    fetch('https://api-middle-man.herokuapp.com/emp')
+    .then( result => {
+      return result.json();
+    })
+    .then(data => {
       console.log(data);
-    }
+    })
   }
 
   render() {
