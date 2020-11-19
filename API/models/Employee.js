@@ -7,7 +7,7 @@ const empSchema = mongoose.Schema({
     },
     jobTitle: {
         type: String,
-        required: true
+        required: true,
     },
     salary: {
         type: String,

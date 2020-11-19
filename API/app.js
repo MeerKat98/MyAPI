@@ -3,23 +3,28 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const empRoute = require('./routes/employees');
+const clientRoute = require('./routes/clients');
 const cors = require('cors');
 require('dotenv/config');
 
-/*###############Middleware###################*/
+/**Middleware*/
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/emp', empRoute);
+app.use('/clients', clientRoute);
 
-/*################Routes######################*/
+
+/**Routes*/
 app.get('/',(req, res) => {
     res.send('Home');
 });
 
-/*Connect to DB */
+
+/**Connect to DB */
 mongoose.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true, useNewUrlParser: true }, () => {
     console.log('Connected to DB');
 });
 
-/*###############Listener######################*/
+
+/**Listener*/
 app.listen(process.env.PORT || 3000);
