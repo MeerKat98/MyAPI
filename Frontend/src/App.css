@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40px;
+  height: 50px;
   pointer-events: none;
 }
 
@@ -13,25 +13,10 @@
   }
 }
 
-.content-container {
-  padding: 50px;
-  height: 100vh;
-  background-color: lightgray;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn {
-  margin: 10px;
-  height: 30px;
-  width: 50px;
-  border: solid 2px #282c34;
-}
-
-.btn:hover {
-  cursor: pointer;
-  transform: translateY(-5px);
-  transition: 180ms;
+.header-text {
+  font-size: 35px;
+  font-family: impact;
+  margin: 0;
 }
 
 .App-header {
@@ -40,7 +25,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }
