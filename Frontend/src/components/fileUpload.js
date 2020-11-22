@@ -20,13 +20,23 @@ const FileUpload = () => {
 
         try {
             const res = await axios.post('https://api-middle-man.herokuapp.com/upload', formData, {
+            //const res = await axios.post('http://localhost:3000/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
 
-            const {fileName, filePath } = res.data;
-            setUploadedFile({ fileName, filePath});
+            const {fileName, arr } = res.data;
+            console.log(arr[0]);
+            const content = await axios.post('https://api-middle-man.herokuapp.com/emp', {
+                name: arr[0][0],
+                jobTitle: arr[0][1],
+                salary: arr[0][2],
+                email: arr[0][3]
+            });
+
+            console.log(content.data);
+            setUploadedFile({ fileName, arr});
             console.log('File uploaded');
         } catch (err) {
             if (err.response.status === 500 ) {
@@ -49,6 +59,7 @@ const FileUpload = () => {
                 <input type="submit" value="upload" className="btn btn-primary btn-block mt-4" />
             </form>
             <h3 className="text-center mt-4"> {uploadedFile.fileName} </h3>
+            <p className="text-center mt-4"> {uploadedFile.arr} </p>
         </Fragment>
     )
 };

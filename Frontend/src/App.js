@@ -3,17 +3,6 @@ import logo from './logo.svg';
 import FileUpload from './components/fileUpload';
 import './App.css';
 
-/**getReq() {
-  console.log("Requesting data from API")
-  fetch('https://api-middle-man.herokuapp.com/emp')
-  .then( result => {
-    return result.json();
-  })
-  .then(data => {
-    console.log(data);
-  })
-} */
-
 const App = () => <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
